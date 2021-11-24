@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>区块链学习网</title>
+    <meta charset="utf-8">
+    <link href="../styles/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <h1>区块链学习网</h1>
+        </div>
+    </header>
+    <nav>
+        <div class="topnav">
+            <ul>
+                <li><a href="../index.html">主页</a></li>
+                <li><a href="../bk.html">博客</a></li>
+                <li><a href="../spsy.html">视频</a></li>
+                <li><a href="../xgjsy.html">小工具</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">添加</a>
+                    <div class="dropdown-content">
+                        <a class="dd" href="../tjwz.html">文章</a>
+                        <a class="dd" href="../tjsp.html">视频</a>
+                        <a class="dd" href="../tjxgj.html">小工具</a>
+                    </div>
+                </li>
+                <li style="float:right"><a href="">打赏我</a></li>
+                <li style="float:right"><a href="http://www.zhihu.com">学习网站</a></li>
+            </ul>
+        </div>
+    </nav>
+    <h2 class="bt">
+        在这里学习区块链相关算法
+    </h2>
+    <main>
+        <div class="raw">
+            <div class="aside2">
+                <ul class="list2">
+                    <li><a href="Raft.html">拜占庭协定</a></li>
+                    <ul class="list3">
+                        <li><a href="Raft.html">Raft</a></li>
+                        <li><a href="BTF.html">BTF</a></li>
+                        <li><a href="PBTF.html">PBTF</a></li>
+                    </ul>
+                    <li><a href="fdc.html">非对称加密技术</a></li>
+                    <ul class="list3">
+                        <li><a href="fdc.html">非对称加密技术</a></li>
+                        <li><a href="fdcqkl.html">区块链与非对称加密技术</a></li>
+                    </ul>
+                    <li><a href="">容错问题</a></li>
+                    <li><a href="">一致性算法</a></li>
+                    <li><a href="">共识机制</a></li>
+                    <li><a href="">分布式存储</a></li>
+                </ul>
+            </div>
+            <div class="mianarticle2">
+                <div class="card">
+                    <button class="scbutton" style="float:right;">
+                        编辑
+                    </button>
+                    <article>
+                        <h2 class="bt">
+                            BTF(拜占庭容错技术)
+                        </h2>
+                        <h4 class="zs">
+                            材料整理自CSDN
+                        </h4>
+                        <p>
+                            拜占庭弄错技术是一类分布式计算领域的容错技术。拜占庭假设是由于硬件错误、网络拥塞或中断以及遭到恶意攻击的原因，计算机和网络出现不可预测的行为。拜占庭容错用来处理这种异常行为，并满足所要解决问题的规范。
+                        </p>
+                        <p>
+                            拜占庭容错系统是一个拥有n台节点的系统，整个系统对于每一个请求，满足以下条件：
+                        </p>
+                        <p>
+                            1）所有非拜占庭节点使用相同的输入信息，产生同样的结果；
+                        </p>
+                        <p>
+                            2）如果输入的信息正确，那么所有非拜占庭节点必须接收这个信息，并计算相应的结果。
+                        </p>
+                        <p>
+                            拜占庭系统普遍采用的假设条件包括：
+                        </p>
+                        <p>
+                            1）拜占庭节点的行为可以是任意的，拜占庭节点之间可以共谋；
+                        </p>
+                        <p>
+                            2）节点之间的错误是不相关的；
+                        </p>
+                        <p>
+                            3）节点之间通过异步网络连接，网络中的消息可能丢失、乱序并延时到达，但大部分协议假设消息在有限的时间里能传达到目的地；
+                        </p>
+                        <p>
+                            4）服务器之间传递的信息，第三方可以嗅探到，但是不能篡改、伪造信息的内容和验证信息的完整性。
+                        </p>
+                        <p>
+                            拜占庭容错由于其理论上的可行性而缺乏实用性，另外还需要额外的时钟同步机制支持，算法的复杂度也是随节点的增加而指数级增加。
+                        </p>
+                        <p>
+
+                        </p>
+                        <p>
+                            编辑于2021.3.31
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <div class="foot">
+        <h2>本网页仅供学习区块链使用</h2>
+    </div>
+
+</body>
+
+</html>

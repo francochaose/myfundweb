@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>区块链学习网</title>
+    <meta charset="utf-8">
+    <link href="../styles/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <h1>区块链学习网</h1>
+        </div>
+    </header>
+    <nav>
+        <div class="topnav">
+            <ul>
+                <li><a href="../index.html">主页</a></li>
+                <li><a href="../bk.html">博客</a></li>
+                <li><a href="../spsy.html">视频</a></li>
+                <li><a href="../xgjsy.html">小工具</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">添加</a>
+                    <div class="dropdown-content">
+                        <a class="dd" href="../tjwz.html">文章</a>
+                        <a class="dd" href="../tjsp.html">视频</a>
+                        <a class="dd" href="../tjxgj.html">小工具</a>
+                    </div>
+                </li>
+                <li style="float:right"><a href="">打赏我</a></li>
+                <li style="float:right"><a href="http://www.zhihu.com">学习网站</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="raw">
+            <div class="aside2">
+                <ul class="list2">
+                    <li><a href="Raft.html">拜占庭协定</a></li>
+                    <ul class="list3">
+                        <li><a href="Raft.html">Raft</a></li>
+                        <li><a href="BTF.html">BTF</a></li>
+                        <li><a href="PBTF.html">PBTF</a></li>
+                    </ul>
+                    <li><a href="fdc.html">非对称加密技术</a></li>
+                    <ul class="list3">
+                        <li><a href="fdc.html">非对称加密技术</a></li>
+                        <li><a href="fdcqkl.html">区块链与非对称加密技术</a></li>
+                    </ul>
+                    <li><a href="">容错问题</a></li>
+                    <li><a href="">一致性算法</a></li>
+                    <li><a href="">共识机制</a></li>
+                    <li><a href="">分布式存储</a></li>
+                </ul>
+            </div>
+            <div class="mianarticle2">
+                <div class="card">
+                    <button class="scbutton" style="float:right;">
+                        编辑
+                    </button>
+                    <article>
+                        <h2 class="bt">
+                            Raft算法
+                        </h2>
+                        <h4 class="zs">
+                            材料整理自CSDN
+                        </h4>
+                        <p>
+                            拜占庭的故事大概是这么说的：拜占庭帝国拥有巨大的财富，周围10个邻邦垂诞已久，但拜占庭高墙耸立，固若金汤，没有一个单独的邻邦能够成功入侵。任何单个邻邦入侵的都会失败，同时也有可能自身被其他9个邻邦入侵。拜占庭帝国防御能力如此之强，至少要有十个邻邦中的一半以上同时进攻，才有可能攻破。然而，如果其中的一个或者几个邻邦本身答应好一起进攻，但实际过程出现背叛，那么入侵者可能都会被歼灭。于是每一方都小心行事，不敢轻易相信邻国。这就是拜占庭将军问题。 在这个分布式网络里：每个将军都有一份实时与其他将军同步的消息账本。账本里有每个将军的签名都是可以验证身份的。如果有哪些消息不一致，可以知道消息不一致的是哪些将军。尽管有消息不一致的，只要超过半数同意进攻，少数服从多数，共识达成。
+                        </p>
+                        <p>
+                            由此，在一个分布式的系统中，尽管有坏人，坏人可以做任意事情(不受protocol限制)，比如不响应、发送错误信息、对不同节点发送不同决定、不同错误节点联合起来干坏事等等。但是，只要大多数人是好人，就完全有可能去中心化地实现共识。
+                        </p>
+                        <h3>
+                            什么是 Raft 算法？
+                        </h3>
+                        <p>
+                            Raft 算法是一种简单易懂的共识算法。它依靠 状态机 和 主从同步 的方式，在各个节点之间实现数据的一致性。
+                        </p>
+                        <h3>
+                            在学习Raft算法的时候，需要了解Raft的两个核心要点：
+                        </h3>
+                        <h4>
+                            1.选取主节点
+                        </h4>
+                        <h4>
+                            2.同步数据
+                        </h4>
+                        <p>
+                            不难理解，使用主从同步的方式，可以让集群各个节点的数据更新以主节点为准，从而保证了一致性。那么，如何选取主节点呢？
+                        </p>
+                        <p>
+                            Raft算法在选择主节点的过程中，也是通过多个节点之间的投票竞争。
+                        </p>
+                        <p>
+                            说到这里，不得不说一下Raft算法的状态机。Raft算法为节点定义了三种角色：
+                        </p>
+                        <h4>
+                            1.Leader（主节点）
+                        </h4>
+                        <h4>
+                            2.Follower（从节点）
+                        </h4>
+                        <h4>
+                            3.Candidate（参与投票竞争的节点）
+                        </h4>
+                        <span>
+                            让我们来看一看选主的具体流程：
+                        </span>
+                        <p>
+                            <strong>第一步</strong>，在最初，还没有一个主节点的时候，所有节点的身份都是Follower。每一个节点都有自己的计时器，当计时达到了超时时间（Election Timeout），该节点会转变为Candidate。
+                        </p>
+                        <p text-align:center;><img src="../images/Raft1.jpg"></p>
+                        <p>
+                            <strong>第二步</strong>，成为Candidate的节点，会首先给自己投票，然后向集群中其他所有的节点发起请求，要求大家都给自己投票。
+                        </p>
+                        <p text-align:center;><img src="../images/Raft2.jpg"></p>
+                        <p>
+                            <strong>第三步</strong>，其他收到投票请求且还未投票的Follower节点会向发起者投票，发起者收到反馈通知后，票数增加。
+                        </p>
+                        <p text-align:center;><img src="../images/Raft3.jpg"></p>
+                        <p>
+                            <strong>第四步</strong>，当得票数超过了集群节点数量的一半，该节点晋升为Leader节点。Leader节点会立刻向其他节点发出通知，告诉大家自己才是老大。收到通知的节点全部变为Follower，并且各自的计时器清零。
+                        </p>
+                        <p text-align:center;><img src="../images/Raft4.jpg"></p>
+                        <p>
+                            这里需要说明一点，每个节点的超时时间都是不一样的。比如A节点的超时时间是3秒，B节点的超时时间是5秒，C节点的超时时间是4秒。这样一来，A节点将会最先发起投票请求，而不是所有节点同时发起。
+                        </p>
+                        <p>
+                            为什么这样设计呢？设想如果所有节点同时发起投票，必然会导致大家的票数差不多，形成僵局，谁也当不成老大。
+                        </p>
+                        <p>
+                            那么，成为Leader的节点是否就坐稳了老大的位置呢？并不是。Leader节点需要每隔一段时间向集群其他节点发送心跳通知，表明你们的老大还活着。
+                        </p>
+                        <p text-align:center;><img src="../images/Raft5.jpg"></p>
+                        <p>
+                            一旦Leader节点挂掉，发不出通知，那么计时达到了超时时间的Follower节点会转变为Candidate节点，发起选主投票，周而复始......
+                        </p>
+                        <p text-align:center;><img src="../images/Raft6.jpg"></p>
+                        <span>
+                            让我们来看一看数据同步的流程：
+                        </span>
+
+                        <p>
+                            <strong>第一步</strong>，由客户端提交数据到Leader节点。
+                        </p>
+                        <p text-align:center;><img src="../images/Raft7.jpg"></p>
+                        <p>
+                            <strong>第二步</strong>，由Leader节点把数据复制到集群内所有的Follower节点。如果一次复制失败，会不断进行重试。
+                        </p>
+                        <p text-align:center;><img src="../images/Raft8.jpg"></p>
+                        <p>
+                            <strong>第三步</strong>，Follower节点们接收到复制的数据，会反馈给Leader节点。
+                        </p>
+                        <p text-align:center;><img src="../images/Raft9.jpg"></p>
+                        <p>
+                            <strong>第四步</strong>，如果Leader节点接收到超过半数的Follower反馈，表明复制成功。于是提交自己的数据，并通知客户端数据提交成功。
+                        </p>
+                        <p text-align:center;><img src="../images/Raft10.jpg"></p>
+                        <p>
+                            <strong>第五步</strong>，由Leader节点通知集群内所有的Follower节点提交数据，从而完成数据同步流程。
+                        </p>
+                        <p text-align:center;><img src="../images/Raft11.jpg"></p>
+                        <p>
+                            编辑于 2021.4.7
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <div class="foot">
+        <h2>本网页仅供学习区块链使用</h2>
+    </div>
+
+</body>
+
+</html>
