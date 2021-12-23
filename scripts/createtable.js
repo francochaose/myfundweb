@@ -1,19 +1,17 @@
-window.onload = function() {
-    $.ajax({
-        url: "../json/fund_daiy1213.json", //json文件位置
-        type: "GET", //请求方式为get
-        dataType: "json", //返回数据格式为json
-        success: function(data) { //请求成功完成后要执行的方法 
-            var tbody_all = document.getElementById('tbMain_all');
-            for (var i = 0; i < data.length; i++) { //遍历一下json数据  
-                var trow = getDataRow(data[i]); //定义一个方法,返回tr数据  
-                tbody_all.appendChild(trow);
-            }
+var tbody_all = document.getElementById('tbMain_all');
+$.ajax({
+    url: "./json/fund_daiy1213.json", //json文件位置
+    type: "GET", //请求方式为get
+    dataType: "json", //返回数据格式为json
+    success: function(data) { //请求成功完成后要执行的方法 
+        //each循环 使用$.each方法遍历返回的数据date
+        for (var i = 0; i < data.RECORDS.length; i++) { //遍历一下json数据  
+            var trow = getDataRow(data.RECORDS[i]); //定义一个方法,返回tr数据  
+            tbody_all.appendChild(trow);
         }
-    })
+    }
+});
 
-
-}
 
 function getDataRow(h) {
     var row = document.createElement('tr'); //创建行  
@@ -22,7 +20,7 @@ function getDataRow(h) {
     row.appendChild(codeCell); //加入行  ，下面类似  
     var a1 = document.createElement('a')
     a1.innerText = h.ts_code;
-    a1.href = "charts.html";
+    a1.href = "chart.html";
     codeCell.appendChild(a1); //填充数据  
 
     var jcCell = document.createElement('td'); //创建第一列  
