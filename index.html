@@ -4,6 +4,7 @@
 <head>
     <title>区块链学习网</title>
     <meta charset="utf-8">
+    <script src="scripts/jquery-1.11.0.min.js"></script>
     <link href="styles/style.css" rel="stylesheet">
     <style>
 
@@ -11,83 +12,88 @@
 </head>
 
 <body>
-    <header>
-        <div class="header">
-            <h1>区块链学习网</h1>
-        </div>
-    </header>
-    <nav>
+    <div class="nav">
         <div class="topnav">
-            <ul>
-                <li><a href="index.html">主页</a></li>
-                <li><a href="bk.html">博客</a></li>
-                <li><a href="spsy.html">视频</a></li>
-                <li><a href="xgjsy.html">小工具</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">添加</a>
-                    <div class="dropdown-content">
-                        <a class="dd" href="tjwz.html">文章</a>
-                        <a class="dd" href="tjsp.html">视频</a>
-                        <a class="dd" href="tjxgj.html">小工具</a>
-                    </div>
-                </li>
-                <li style="float:right"><a href="#news">打赏我</a></li>
-                <li style="float:right"><a href="www.zhihu.com">学习网站</a></li>
-            </ul>
-        </div>
-    </nav>
-    <main>
-        <h2 class="dbt">从这里快速开始</h2>
-        <div class="card">
-            <div class="zhumulu">
-                <h2 class="bt">想要了解什么？</h2>
-                <div class="mulu1">
-                    <a href="bk.html"><button>文章</button></a>
-                    <a href="spsy.html"><button>视频</button></a>
-                    <a href="xgjsy.html"><button>小工具</button></a>
-                </div>
-                <h2 class="bt" style="height:100px" ;>更加详细的分类</h2>
-                <div class="fmulu">
-                    <h3 style="padding-left: 20px;">文章：</h3>
-                    <div class="mulu2">
-                        <span><strong>智能财务学习：</strong></span>
-                        <a href=""><button>区块链简介</button></a>
-                        <a href=""><button>区块链可能应用</button></a>
-                        <a href=""><button>区块链技术与开发</button></a>
-                        <a href=""><button>区块链的影响与未来</button></a>
-                    </div>
-                    <div class="mulu2">
-                        <span><strong>区块链与智能财务：</strong></span>
-                        <a href=""><button>区块链与智能财务</button></a>
-                    </div>
-                    <div class="mulu2">
-                        <span><strong>区块链相关算法：</strong></span>
-                        <a href=""><button>拜占庭协定</button></a>
-                        <a href=""><button>非对称加密技术</button></a>
-                        <a href=""><button>区块链与非对称加密技术</button></a>
-                        <a href=""><button>容错问题</button></a>
-                        <a href=""><button>一致性算法</button></a>
-                        <a href=""><button>共识机制</button></a>
-                        <a href=""><button>分布式储存</button></a>
-                    </div>
-                </div>
-                <div class="fmulu">
-                    <h3 style=" padding-left: 20px;">视屏：</h3>
-                    <div class="mulu2">
-                        <a href="/sp/qklsp1.html"><button>区块链学习</button></a>
-                        <a href=""><button>财务学习</button></a>
-                    </div>
-                </div>
-                <div class="fmulu">
-                    <h3 style=" padding-left: 20px;">小工具：</h3>
-                    <div class="mulu2">
-                        <a href="xgjsy.html"><button>MetaMask</button></a>
-                        <a href="xgjsy.html"><button>Mist浏览器</button></a>
-                        <a href="xgjsy.html"><button>Remix</button></a>
-                    </div>
-                </div>
+            <div class="navul">
+                <ul>
+                    <li><a href="index.html">主页</a></li>
+                    <li><a href="jjlb.html">基金列表</a></li>
+                    <li><a href="spsy.html">基金经理</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">添加</a>
+                        <div class="dropdown-content">
+                            <a class="dd" href="tjwz.html">基金</a>
+                            <a class="dd" href="tjsp.html">基金经理</a>
+                        </div>
+                    </li>
+                    <li><a href="#news">打赏我</a></li>
+                </ul>
             </div>
         </div>
+    </div>
+    <main>
+        <div class="raw">
+            <div class="indexbody">
+                <div class="card">
+                    <h1 class="index_bt">连涨基金</h1>
+                    <span class="index_span">根据某支基金的连涨天数及涨幅进行排序，帮助您最快选择基金</span>
+                    <table class="fund_table">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>基金代码</th>
+                                <th>连涨天数</th>
+                                <th>基金经理</th>
+                                <th>总体趋势（较入市）</th>
+                                <th>风险系数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody_recommed">
+                            <tr>
+                                <td>1</td>
+                                <td>159720.SZ</td>
+                                <td>9</td>
+                                <td>张坤</td>
+                                <td>上涨18%</td>
+                                <td>0.31</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>159736.SZ</td>
+                                <td>7</td>
+                                <td>张坤</td>
+                                <td>上涨11%</td>
+                                <td>0.33</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>159747.SZ</td>
+                                <td>5</td>
+                                <td>萧楠</td>
+                                <td>上涨12%</td>
+                                <td>0.43</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>169101.SZ</td>
+                                <td>6</td>
+                                <td>朱少醒</td>
+                                <td>上涨9%</td>
+                                <td>0.67</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>16947.SZ</td>
+                                <td>3</td>
+                                <td>张坤</td>
+                                <td>上涨21%</td>
+                                <td>0.69</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
     </main>
 
 
@@ -96,5 +102,6 @@
     </div>
 
 </body>
+
 
 </html>
