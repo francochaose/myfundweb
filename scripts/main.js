@@ -7,7 +7,7 @@ function renderTemplate(domId, tplName, resourceType, resourceId) {
     $.get(path, function(data) {
         console.log(data)
 
-        path = `/tpl/${tplName}.tpl`
+        path = `./tpl/${tplName}.tpl`
 
         // 如果需要监测获取出错的状况，请使用$.ajax。 $.get执行出错时，无任何提示，调试时请注意
         $.get(path, function(tpl) {
@@ -24,11 +24,11 @@ function renderTemplate(domId, tplName, resourceType, resourceId) {
 
 function renderTemplate_m(domId, tplName, json, resourceId) {
 
-    path = `/json/${json}.json`
+    path = `./json/${json}.json`
 
     $.get(path, function(data) {
 
-        path = `/tpl/${tplName}.tpl`
+        path = `./tpl/${tplName}.tpl`
 
         // 如果需要监测获取出错的状况，请使用$.ajax。 $.get执行出错时，无任何提示，调试时请注意
         $.get(path, function(tpl) {
@@ -45,7 +45,7 @@ function renderTemplate_m(domId, tplName, json, resourceId) {
 
 function renderTemplate_s(domId, tplName) {
 
-    path = `/tpl/${tplName}.tpl`
+    path = `./tpl/${tplName}.tpl`
         // 如果需要监测获取出错的状况，请使用$.ajax。 $.get执行出错时，无任何提示，调试时请注意
     $.get(path, function(tpl) {
         // 这里使用了链接调用,可以节省一个本地变量
