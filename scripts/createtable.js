@@ -12,7 +12,6 @@ $.ajax({
     }
 });
 
-
 function getDataRow(h) {
     var row = document.createElement('tr'); //创建行  
 
@@ -20,7 +19,7 @@ function getDataRow(h) {
     row.appendChild(codeCell); //加入行  ，下面类似  
     var a1 = document.createElement('a')
     a1.innerText = h.ts_code;
-    a1.href = "chart.html";
+    a1.href = "#/chart";
     codeCell.appendChild(a1); //填充数据  
 
     var jcCell = document.createElement('td'); //创建第一列  
@@ -51,11 +50,9 @@ function getDataRow(h) {
     btnAdd.setAttribute('type', 'button'); //type="button"  
     btnAdd.setAttribute('value', '添加');
     btnAdd.setAttribute('id', 'add');
-    addCell.appendChild(btnAdd); //把删除按钮加入td
-    //删除操作  
+    addCell.appendChild(btnAdd);
     btnAdd.onclick = function() {
         var tbody_selected = document.getElementById('tbMain_selected')
-            //找到按钮所在行的节点，然后删掉这一行  
         var s_row = document.createElement('tr');
         s_row.innerHTML = this.parentNode.parentNode.innerHTML;
         s_row.removeChild(s_row.lastElementChild);

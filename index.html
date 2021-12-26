@@ -7,8 +7,11 @@
     <script src="scripts/jquery-1.11.0.min.js"></script>
     <link href="styles/style.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/plugin1.css">
-    <script src="scripts/plugin1_js.js"></script>
-    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="scripts/ejs.js"></script>
+    <script src="scripts/director.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/echarts.js"></script>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/css/all.css" rel="stylesheet">
     <style>
 
     </style>
@@ -19,128 +22,80 @@
         <div class="topnav">
             <div class="navul">
                 <ul>
-                    <li><a href="index.html">主页</a></li>
-                    <li><a href="jjlb.html">基金列表</a></li>
-                    <li><a href="spsy.html">基金经理</a></li>
+                    <li><a href="#/index"><i class="fas fa-laugh-wink" style="font-size:20px"></i> 主页</a></li>
+                    <li><a href="#/table"><i class="fas fa-list-alt" style="font-size:20px"></i> 基金列表</a></li>
+                    <li><a href="#/manager"><i class="fas fa-user-tie" style="font-size:20px"></i> 基金经理</a></li>
                     <li class="dropdown">
-                        <a href="javascript:void(0)" class="dropbtn">添加</a>
+                        <a href="javascript:void(0)" class="dropbtn"><i class="fas fa-edit" style="font-size:20px"></i> 添加</a>
                         <div class="dropdown-content">
-                            <a class="dd" href="tjwz.html">基金</a>
-                            <a class="dd" href="tjsp.html">基金经理</a>
+                            <a class="dd" href="tjwz.html"><i class="fas fa-chart-line" style="font-size:20px"></i> 基金</a>
+                            <a class="dd" href="tjsp.html"><i class="fas fa-user-tie" style="font-size:20px"></i> 基金经理</a>
                         </div>
                     </li>
-                    <li><a href="#news">打赏我</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <main>
-        <div class="raw">
-            <div class="indexbody">
-                <div class="card">
-                    <h1 class="index_bt"> 这是你的捍卫者</h1>
-                    <div class="container">
-                        <div class="trent-slider">
-                            <div class="t-slide current-t-slide">
-                                <img src="img/fundwebsbw1.jpg" />
-                            </div>
-                            <div class="t-slide">
-                                <img src="img/fundwebxn1.jpg" />
-                            </div>
-                            <div class="t-slide">
-                                <img src="img/fundwebzk1.jpg" />
-                            </div>
-
-                            <div class="t-slider-controls">
-                                <div class="arrow right-arrow">
-                                    <div class="arrow-container">
-                                        <div class="arrow-icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-                                    </div>
-                                </div>
-                                <div class="arrow left-arrow">
-                                    <div class="arrow-container">
-                                        <div class="arrow-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
-                                    </div>
-                                </div>
-                                <div class="t-load-bar">
-                                    <div class="inner-load-bar"></div>
-                                </div>
-                                <div class="t-dots-container">
-                                    <div class="t-slide-dots-wrap">
-                                        <div class="t-slide-dots">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <h1 class="index_bt">连涨基金</h1>
-                    <span class="index_span">根据某支基金的连涨天数及涨幅进行排序，帮助您最快选择基金</span>
-                    <table class="fund_table">
-                        <thead>
-                            <tr>
-                                <th>序号</th>
-                                <th>基金代码</th>
-                                <th>连涨天数</th>
-                                <th>基金经理</th>
-                                <th>总体趋势（较入市）</th>
-                                <th>风险系数</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbody_recommed">
-                            <tr>
-                                <td>1</td>
-                                <td>159720.SZ</td>
-                                <td>9</td>
-                                <td>张坤</td>
-                                <td>上涨18%</td>
-                                <td>0.31</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>159736.SZ</td>
-                                <td>7</td>
-                                <td>张坤</td>
-                                <td>上涨11%</td>
-                                <td>0.33</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>159747.SZ</td>
-                                <td>5</td>
-                                <td>萧楠</td>
-                                <td>上涨12%</td>
-                                <td>0.43</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>169101.SZ</td>
-                                <td>6</td>
-                                <td>朱少醒</td>
-                                <td>上涨9%</td>
-                                <td>0.67</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>16947.SZ</td>
-                                <td>3</td>
-                                <td>张坤</td>
-                                <td>上涨21%</td>
-                                <td>0.69</td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+    <main id="main">
     </main>
 
 
     <div class=" foot">
-        <h2>本网页仅供学习区块链使用</h2>
+        <h2>本网页仅供学习基金使用</h2>
     </div>
 
 </body>
+<script type="text/javascript">
+    // 客户端路由库，方便处理对hash的监听和解析 https://github.com/flatiron/director    
+    // https://www.cnblogs.com/Showshare/p/director-chinese-tutorial.html
+    var routes = {
+        '/': home,
+        '/index': index,
+        '/table': table,
+        '/manager': manager,
+        '/manager/:id': manager_show,
+        '/chart': chart,
+    };
+
+    var router = Router(routes).configure({
+        strict: false
+    });
+    router.init();
+
+
+    //  `index.html#/posts/2`这样的客户端路由被分享或收藏时，也会触发载入首页，导致home()被执行 ，此处排除这种状况
+    if (location.hash == '') {
+        home()
+    }
+
+    function home() {
+        index()
+    }
+
+    function index() {
+        renderTemplate_s('#main', '/index');
+    }
+
+    function table() {
+        renderTemplate_s('#main', '/table');
+    }
+
+    function manager() {
+        renderTemplate_s('#main', '/manager');
+    }
+
+    function manager_show(id) {
+        renderTemplate_m('#main', '/manager_detail', '/fund_manager', id);
+    }
+
+    function chart() {
+        renderTemplate_s('#main', '/chart');
+    }
+
+
+    function notfound() {
+        alert('404')
+    }
+</script>
 
 </html>
