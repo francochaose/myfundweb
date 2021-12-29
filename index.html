@@ -11,24 +11,26 @@
     <script src="scripts/director.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/echarts.js"></script>
+    <script src="scripts/check_cookie.js"></script>
     <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/css/all.css" rel="stylesheet">
     <style>
 
     </style>
 </head>
 
-<body>
+<body onload="checkCookie()">
     <div class="nav">
         <div class="topnav">
             <div class="navul">
                 <ul>
+                    <p class="wlc_p">欢迎!</p>
                     <li><a href="#/index"><i class="fas fa-laugh-wink" style="font-size:20px"></i> 主页</a></li>
                     <li><a href="#/table"><i class="fas fa-list-alt" style="font-size:20px"></i> 基金列表</a></li>
                     <li><a href="#/manager"><i class="fas fa-user-tie" style="font-size:20px"></i> 基金经理</a></li>
                     <li class="dropdown">
                         <a href="javascript:void(0)" class="dropbtn"><i class="fas fa-edit" style="font-size:20px"></i> 添加</a>
                         <div class="dropdown-content">
-                            <a class="dd" href="tjwz.html"><i class="fas fa-chart-line" style="font-size:20px"></i> 基金</a>
+                            <a class="dd" href="#/new"><i class="fas fa-chart-line" style="font-size:20px"></i> 基金</a>
                             <a class="dd" href="tjsp.html"><i class="fas fa-user-tie" style="font-size:20px"></i> 基金经理</a>
                         </div>
                     </li>
@@ -36,6 +38,7 @@
             </div>
         </div>
     </div>
+
     <main id="main">
     </main>
 
@@ -46,14 +49,14 @@
 
 </body>
 <script type="text/javascript">
-    // 客户端路由库，方便处理对hash的监听和解析 https://github.com/flatiron/director    
-    // https://www.cnblogs.com/Showshare/p/director-chinese-tutorial.html
     var routes = {
         '/': home,
         '/index': index,
         '/table': table,
         '/manager': manager,
+        '/new': new_m,
         '/manager/:id': manager_show,
+        '/edit/:id': edit,
         '/chart': chart,
     };
 
@@ -84,8 +87,16 @@
         renderTemplate_s('#main', 'manager');
     }
 
+    function new_m() {
+        renderTemplate_s('#main', 'new');
+    }
+
     function manager_show(id) {
-        renderTemplate_m('#main', 'manager_detail', 'fund_manager', id);
+        renderTemplate_m('#main', 'manager_detail', id);
+    }
+
+    function edit(id) {
+        renderTemplate_m('#main', 'edit', id);
     }
 
     function chart() {

@@ -1,16 +1,12 @@
 var tbody_all = document.getElementById('tbmanager');
-$.ajax({
-    url: "./json/fund_manager.json", //json文件位置
-    type: "GET", //请求方式为get
-    dataType: "json", //返回数据格式为json
-    success: function(data) { //请求成功完成后要执行的方法 
-        //each循环 使用$.each方法遍历返回的数据date
-        for (var i = 0; i < data.RECORDS.length; i++) { //遍历一下json数据  
-            var trow = getDataRow(data.RECORDS[i], i); //定义一个方法,返回tr数据  
-            tbody_all.appendChild(trow);
-        }
-    }
-});
+
+data = getposts()
+for (var i = 0; i < data.length; i++) { //遍历一下json数据  
+    var m_id = data[i].id;
+    var trow = getDataRow(data[i], m_id); //定义一个方法,返回tr数据  
+    tbody_all.appendChild(trow);
+}
+
 
 function getDataRow(h, num) {
     var row = document.createElement('tr'); //创建行  
@@ -43,13 +39,20 @@ function getDataRow(h, num) {
     btnDel.setAttribute('type', 'button'); //type="button"  
     btnDel.setAttribute('value', '删除');
     DelCell.appendChild(btnDel);
+    var btnEdit = document.createElement('input'); //创建一个input控件  
+    btnEdit.setAttribute('type', 'button'); //type="button"  
+    btnEdit.setAttribute('value', '修改');
+    DelCell.appendChild(btnEdit);
     //删除操作  
     btnDel.onclick = function() {
         this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+        localStorage.removeItem(num);
         //btnDel - td - tr - tbody - 删除(tr)  
         //刷新网页还原。实际操作中，还要删除数据库中数据，实现真正删除  
     }
-
+    btnEdit.onclick = function() {
+        window.location.href = "#/edit/" + num;
+    }
 
 
     return row; //返回tr数据      

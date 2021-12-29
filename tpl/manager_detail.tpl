@@ -2,7 +2,7 @@
             <div class="tablebody">
                 <div class="card">
                     <h1 class="index_bt">基金经理详情</h1>
-                    <span class="index_span">注:因数据原因暂时无法动态获取数据，故用几支基金的数据模拟</span>
+                    <span class="index_span">注:因数据原因暂时无法动态获取数据，故几个基金经理的数据模拟</span>
                     <div class="box1">
                         <div class="box_sm">
                             <span class="index_span">姓名:</span>
@@ -17,10 +17,8 @@
                             <p><%= data.resume %></p>
                         </div>
                     </div>
-                    <div class="e_charts"></div>
                 </div>
             </div>
-            <script src="scripts/createcharts.js"></script>
             <div class="aside">
                 <div class="card">
                     <span class="ml">推荐基金</span>
