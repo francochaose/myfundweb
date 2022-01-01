@@ -37,16 +37,16 @@
                     </table>
                 </div>
             </div>
-            <script src="scripts/createtable.js"></script>
+            <script src="js/createtable.js"></script>
             <div class="aside">
                 <div class="card">
                     <span class="ml">推荐基金</span>
                     <ul class="list">
                         <ul class="list1">
-                            <li><a href="qukjj.html">159703.SZ</a></li>
-                            <li><a href="qklyy.html">159729.SZ</a></li>
-                            <li><a href="">159742.SZ</a></li>
-                            <li><a href="">159786.SZ</a></li>
+                            <li><a href="#/chart">159703.SZ</a></li>
+                            <li><a href="#/chart">159729.SZ</a></li>
+                            <li><a href="#/chart">159742.SZ</a></li>
+                            <li><a href="#/chart">159786.SZ</a></li>
                         </ul>
                     </ul>
 

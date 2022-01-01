@@ -14,6 +14,28 @@ body {
     background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
 }
 
+@font-face {
+    font-family: 'webfont';
+    font-display: swap;
+    src: url('//at.alicdn.com/t/webfont_zrcwybnpko.eot');
+    /* IE9*/
+    src: url('//at.alicdn.com/t/webfont_zrcwybnpko.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('//at.alicdn.com/t/webfont_zrcwybnpko.woff2') format('woff2'), url('//at.alicdn.com/t/webfont_zrcwybnpko.woff') format('woff'), /* chrome、firefox */
+    url('//at.alicdn.com/t/webfont_zrcwybnpko.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('//at.alicdn.com/t/webfont_zrcwybnpko.svg#杨任东竹石体-Bold') format('svg');
+    /* iOS 4.1- */
+}
+
+.web-font {
+    font-family: "webfont" !important;
+    font-size: 24px;
+    font-style: normal;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 
 /* 页眉 */
 
@@ -178,73 +200,23 @@ tbody a {
 }
 
 .index_span {
-    margin-top: ;
+    color: red;
+    font-style: italic;
+}
+
+.box_sm p {
+    display: inline-block;
 }
 
 
 /* 图表 */
 
 .e_charts {
-    width: 900px;
+    width: 600px;
     height: 400px;
     margin: 150px auto;
     border: 3px solid rgb(43, 135, 255);
     border-radius: 15px;
-}
-
-
-/* 主页大导航栏设置*/
-
-.mulu1 button {
-    display: inline-block;
-    margin: 10px 30px;
-    background-color: #A7A7A7;
-    border: none;
-    color: rgb(34, 34, 34);
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    outline: none;
-    font-size: 26px;
-    border-radius: 20px;
-}
-
-.mulu2 button {
-    display: inline-block;
-    margin: 10px 20px;
-    background-color: #A7A7A7;
-    border: none;
-    color: rgb(34, 34, 34);
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    outline: none;
-    font-size: 16px;
-    border-radius: 18px;
-}
-
-.mulu1 {
-    text-align: center;
-    height: 150px;
-}
-
-.mulu2 {
-    margin-left: 50px;
-}
-
-.fmulu {
-    margin-top: 50px;
-}
-
-.zhumulu {
-    display: block;
-}
-
-.dbt {
-    font-size: 30px;
-    text-align: center;
 }
 
 
@@ -256,55 +228,9 @@ tbody a {
     margin-top: 10px;
 }
 
-.mianarticle {
-    float: left;
-    width: 75%;
-    margin-top: 10px;
-}
-
-.bt {
-    text-align: center;
-}
-
-.zs {
-    text-align: right;
-}
-
 article p {
     text-indent: 2em;
     margin: 10px;
-}
-
-
-/*首行缩进*/
-
-.jj {
-    text-decoration: none;
-    display: block;
-    color: #333;
-}
-
-
-/* 视频首页设置 */
-
-.sysp img {
-    width: 230px;
-    height: 130px;
-}
-
-.sysp {
-    margin: 20px 10px;
-    display: inline-block;
-}
-
-.sysp span {
-    display: block;
-}
-
-.sysp a {
-    text-decoration: none;
-    color: #333;
-    text-align: center;
 }
 
 
@@ -382,49 +308,6 @@ article p {
 }
 
 
-/* 算法页面设置*/
-
-.aside2 {
-    float: left;
-    width: 20%;
-    background-color: #f1f1f1;
-    margin-top: 10px;
-}
-
-.mianarticle2 {
-    float: left;
-    width: 80%;
-    margin-top: 10px;
-}
-
-.list2 {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: #dadada;
-}
-
-.list2 li {
-    border-bottom: 1px solid rgb(150, 150, 150);
-}
-
-.list2 li a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-
-.list2 li a:hover {
-    background-color: #555;
-    color: white;
-}
-
-.list3 {
-    list-style-type: square;
-}
-
-
 /*表单*/
 
 .writearticle .articlejj {
@@ -477,12 +360,8 @@ article p {
     background-color: #F7f7f7;
 }
 
-.writearticle label {
-    font-size: 1.5em;
-}
-
 .writearticle select {
-    width: 30%;
+    width: 7%;
     padding: 16px 20px;
     border: 2px solid #ccc;
     margin: 8px 0px;

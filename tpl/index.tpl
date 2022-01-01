@@ -1,17 +1,18 @@
 <div class="raw">
             <div class="indexbody">
                 <div class="card">
-                    <h1 class="index_bt"> 这是你的捍卫者</h1>
+                    <p class="web-font">这是一个基金推荐小网页~</p>
+                    <h1 class="index_bt"> 推荐基金经理</h1>
                     <div class="container">
                         <div class="trent-slider">
                             <div class="t-slide current-t-slide">
-                                <img src="img/fundwebsbw1.jpg" />
+                                <img src="img/fund1.jpg" />
                             </div>
                             <div class="t-slide">
-                                <img src="img/fundwebxn1.jpg" />
+                                <img src="img/fund2.jpg" />
                             </div>
                             <div class="t-slide">
-                                <img src="img/fundwebzk1.jpg" />
+                                <img src="img/fund3.jpg" />
                             </div>
 
                             <div class="t-slider-controls">
@@ -38,7 +39,7 @@
                             </div>
                         </div>
                     </div>
-                    <script src="scripts/plugin1_js.js"></script>
+                    <script src="js/plugin1_js.js"></script>
                     <h1 class="index_bt">连涨基金</h1>
                     <span class="index_span">根据某支基金的连涨天数及涨幅进行排序，帮助您最快选择基金</span>
                     <table class="fund_table">

@@ -16,7 +16,16 @@
                     </div>
                     <div>
                         <p>学历</p>
-                        <input type="text" id="new_manager_edu" name="m_edu" onblur="hint_hide('edu_hint')">
+                        <select onclick="hint_hide('edu_hint')">
+                            <option value="" id="new_manager_edu" name="m_edu"></option>
+                            <option value="教授" id="new_manager_edu" name="m_edu">教授</option>
+                            <option value="副教授" id="new_manager_edu" name="m_edu">副教授</option>
+                            <option value="博士" id="new_manager_edu" name="m_edu">博士</option>
+                            <option value="硕士" id="new_manager_edu" name="m_edu">硕士</option>
+                            <option value="本科" id="new_manager_edu" name="m_edu">本科</option>
+                            <option value="专科" id="new_manager_edu" name="m_edu">专科</option>
+                            <option value="高中" id="new_manager_edu" name="m_edu">高中</option>
+                        </select><br>
                         <span id="edu_hint"></span>
                     </div>
                     <div>
@@ -31,4 +40,4 @@
             </div>
     </div>
 </div>
-        <script src=" scripts/inputcheck.js "></script>
+        <script src="js/inputcheck.js "></script>

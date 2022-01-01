@@ -5,29 +5,29 @@
                     <span class="index_span">注:因数据原因暂时无法动态获取数据，故几个基金经理的数据模拟</span>
                     <div class="box1">
                         <div class="box_sm">
-                            <span class="index_span">姓名:</span>
-                            <p><%= data.name %></p>
+                            <p>姓名:  </p>
+                            <p><strong><%= data.name %></strong></p>
                         </div>
                         <div class="box_sm">
-                            <span class="index_span">学历:</span>
-                            <p><%= data.edu %></p>
+                            <p">学历:  </p>
+                            <p><strong><%= data.edu %></strong></p>
                         </div>
-                        <div class="box_sm">
-                            <span class="index_span">简介:</span>
-                            <p><%= data.resume %></p>
+                        <div>
+                            <p>简介:</p>
+                            <article><%= data.resume %></article>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="aside">
                 <div class="card">
-                    <span class="ml">推荐基金</span>
+                    <span class="ml">推荐基金经理</span>
                     <ul class="list">
                         <ul class="list1">
-                            <li><a href="qukjj.html">159703.SZ</a></li>
-                            <li><a href="qklyy.html">159729.SZ</a></li>
-                            <li><a href="">159742.SZ</a></li>
-                            <li><a href="">159786.SZ</a></li>
+                            <li><a href="#/manager/0">董阳阳</a></li>
+                            <li><a href="#/manager/1">彭海平</a></li>
+                            <li><a href="#/manager/2">刘宁</a></li>
+                            <li><a href="#/manager/3">盛丰衍</a></li>
                         </ul>
                     </ul>
 

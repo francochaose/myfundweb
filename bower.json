@@ -1,0 +1,21 @@
+{
+    "name": "fundweb-submit-final",
+    "homepage": "https://github.com/francochaose/myfundwebeo.io",
+    "authors": [
+        "francochaose <962780245@qq.com>"
+    ],
+    "description": "",
+    "main": "",
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "jquery": "^3.6.0",
+        "director": "^1.2.8"
+    }
+}
