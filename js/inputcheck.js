@@ -69,6 +69,7 @@ function addmanager() {
         if (!m_id) {
             m_id = get_last_key();
         }
+        9
         localStorage.setItem(m_id, JSON.stringify(post));
         window.location.href = "#/manager";
     }

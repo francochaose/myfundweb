@@ -14,6 +14,24 @@ body {
     background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
 }
 
+@media only screen and (max-width: 600px) {
+    .tablebody {
+        width: 100%;
+    }
+    .main {
+        width: 100%;
+    }
+    .aside {
+        display: none;
+    }
+    .e_charts {
+        width: 450px;
+    }
+    .nav {
+        width: 100%;
+    }
+}
+
 @font-face {
     font-family: 'webfont';
     font-display: swap;
