@@ -1,7 +1,7 @@
 <div class="raw">
             <div class="tablebody">
                 <div class="card">
-                    <h1 class="index_bt">基金列表</h1>
+                    <h1 class="index_bt">基金经理列表</h1>
                     <table class="fund_table">
                         <thead>
                             <tr>
